@@ -7,7 +7,7 @@ module OmniAuth
       option :provider_ignores_state, false
 
       option :client_options, {
-          :site          => 'https://shopifysubscriptions.com',
+          :site          => 'https://admin.rechargeapps.com/partners/app',
           :authorize_url => '/oauth/authorize',
           :token_url     => '/oauth/token'
       }
