@@ -28,12 +28,14 @@ module OmniAuth
 
       def raw_info
         api_url = ENV['RECHARGE_API_URL'] || 'https://api.rechargeapps.com/'
+        puts "OmniAuth::Strategies parsed access token: #{access_token.get(api_url).parsed.inspect}"
         @raw_info ||= access_token.get(api_url).parsed
       end
 
        def callback_url
         # make sure the query string doesnt get added to the redirect_uri
         # https://github.com/intridea/omniauth-oauth2/issues/93
+        puts "OmniAuth::Strategies callback_url: #{full_host + script_name + callback_path}"
         full_host + script_name + callback_path
       end
     end
